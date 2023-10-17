@@ -18,17 +18,20 @@ public class SmartLamp {
         this.model = model;
     }
 
-    public void switchOnOff(){
+    public boolean switchOnOff(){
         boolean status = this.lampSwitch;
         if(status)
         status = false;
         else status = true;
-        //return status;
+        return status;
     }
 
-    public void setLightIntensity(){
-        System.out.println("Insert intensity value from 1 to 3: ");
-
+    public int setLightIntensity(){
+        System.out.println("Insert light intensity value from 1 to 3: ");
+        Scanner scanner = new Scanner(System.in);
+        int intensity = scanner.nextInt();
+        scanner.close();
+        return intensity;
     }
 
 
