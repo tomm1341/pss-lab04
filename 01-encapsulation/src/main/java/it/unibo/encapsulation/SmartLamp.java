@@ -27,13 +27,27 @@ public class SmartLamp {
     }
 
     public int setLightIntensity(){
+        int acceptableVal[] = {1, 2, 3};
+
         System.out.println("Insert light intensity value from 1 to 3: ");
         Scanner scanner = new Scanner(System.in);
         int intensity = scanner.nextInt();
         scanner.close();
-        return intensity;
+        
+        //Controllo validità input
+        for(int i : acceptableVal){
+            if(intensity == i){
+                return intensity;
+            }
+        }
+
+        System.out.println("Invalid input. Please enter a value from 1 to 3.");
+        return -1;
     }
 
+    public String setLightColor(){
+        System.out.println("Insert light color (white / red / blue / green): ");
+    }
 
     public boolean getOnOff(){
         return lampSwitch;
