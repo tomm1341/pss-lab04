@@ -27,7 +27,7 @@ public class SmartLamp {
     }
 
     public int setLightIntensity(){
-        int acceptableVal[] = {1, 2, 3};
+        final int acceptableVal[] = {1, 2, 3};
 
         System.out.println("Insert light intensity value from 1 to 3: ");
         Scanner scanner = new Scanner(System.in);
@@ -46,7 +46,7 @@ public class SmartLamp {
     }
 
     public String setLightColor(){
-        String acceptableVal[] = {"green", "white", "red", "blue"};
+        final String acceptableVal[] = {"green", "white", "red", "blue"};
 
         System.out.println("Insert light color (white / red / blue / green): ");
         Scanner scanner = new Scanner(System.in);
@@ -60,6 +60,8 @@ public class SmartLamp {
             }
         }
 
+        System.out.println("Invalid input. Please enter a valid color: white, red, blue, or green.");
+        return "Invalid color.";
     }
 
     public boolean getOnOff(){
