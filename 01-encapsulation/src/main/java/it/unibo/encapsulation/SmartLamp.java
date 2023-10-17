@@ -1,24 +1,39 @@
 package it.unibo.encapsulation;
+import java.util.Scanner;
 
 public class SmartLamp {
 
-    private final boolean lampOn;
+    private final boolean lampSwitch;
     private final int lightIntensity;
     private final String lightColor;
     private final String brand;
     private final String model;
 
 
-    public SmartLamp(final boolean lampOn, final int lightIntensity, final String lightColor, final String brand, final String model){
-        this.lampOn = lampOn;
+    public SmartLamp(final boolean lampSwitch, final int lightIntensity, final String lightColor, final String brand, final String model){
+        this.lampSwitch = lampSwitch;
         this.lightColor = lightColor;
         this.lightIntensity = lightIntensity;
         this.brand = brand;
         this.model = model;
     }
 
+    public void switchOnOff(){
+        boolean status = this.lampSwitch;
+        if(status)
+        status = false;
+        else status = true;
+        //return status;
+    }
+
+    public void setLightIntensity(){
+        System.out.println("Insert intensity value from 1 to 3: ");
+
+    }
+
+
     public boolean getOnOff(){
-        return lampOn;
+        return lampSwitch;
     }
 
     public int getIntensity(){
@@ -38,7 +53,7 @@ public class SmartLamp {
     }
 
     public void lampInfo(){
-        System.out.println("Smart Lamp On: " + this.lampOn);
+        System.out.println("Smart Lamp On: " + this.lampSwitch);
         System.out.println("Smart Lamp Intensity: " + this.lightIntensity);
         System.out.println("Smart Lamp Color: " + this.lightColor);
         System.out.println("Smart Lamp Brand: " + this.brand);
