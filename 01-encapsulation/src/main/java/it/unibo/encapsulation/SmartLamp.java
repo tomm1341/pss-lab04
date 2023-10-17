@@ -46,7 +46,20 @@ public class SmartLamp {
     }
 
     public String setLightColor(){
+        String acceptableVal[] = {"green", "white", "red", "blue"};
+
         System.out.println("Insert light color (white / red / blue / green): ");
+        Scanner scanner = new Scanner(System.in);
+        String color = scanner.nextLine();
+        scanner.close();
+        
+        //Controllo validità input
+        for (String acceptableColor : acceptableVal) {
+            if (color.equals(acceptableColor)) {
+                return color;
+            }
+        }
+
     }
 
     public boolean getOnOff(){
